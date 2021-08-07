@@ -27,7 +27,7 @@ function App()
      <Route path="/Product">
        <Product/>
      </Route>
-     <Route path="/ProductDetail/:ProductId/:ProductName">
+     <Route path="/ProductDetail/:ProductId">
        <ProductDetail/>
      </Route>
 
