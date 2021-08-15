@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link, Route } from 'react-router-dom'
+import { AddEmployee } from '../MyComponents/AddEmployee'
 
 export const Welcome = () => {
     return (

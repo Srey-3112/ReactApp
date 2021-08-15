@@ -11,28 +11,36 @@ import { Route } from 'react-router-dom';
 import { Welcome } from './Page/Welcome';
 import { Product } from './Page/Product';
 import { ProductDetail } from './Page/ProductDetail';
-
-
+import { SimpleForm } from './Page/SimpleForm';
+import { UserList } from './api/User-List';
+import { UserDetail } from './api/User-Detail';
 
 function App() 
 {
- 
-  return (
-    
-   <div>
-     <MainHeader/>
-     <Route path="/Welcome">
-       <Welcome/>
-     </Route>
-     <Route path="/Product">
-       <Product/>
-     </Route>
-     <Route path="/ProductDetail/:ProductId">
-       <ProductDetail/>
-     </Route>
+     const [users, setusers] = useState([])
+    function fetchUser()
+    {
+        fetch('https://reqres.in/api/users?page=2').then(res =>{
 
-   </div>
-  );
+        return res.json()
+        }).then(data=>{
+
+            // console.log(data.data)
+            setusers(data.data)
+        })
+    }
+    return (
+
+        <div className="container">
+           <button onClick={fetchUser} >getUser</button>
+           <Route path="/" exact>
+            <UserList users={users}/>
+            </Route>
+            <Route path="/users/:id">
+            <UserDetail/>
+            </Route>
+        </div>
+
+    )
 }
-
 export default App;
