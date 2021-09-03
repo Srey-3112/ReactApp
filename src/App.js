@@ -17,6 +17,7 @@ import { UserDetail } from './api/User-Detail';
 // import { toast, ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 import { Child } from './Child';
+import { SearchMovie } from './movie/SearchMovie';
 
 export const GlobalInfo = createContext();
 
@@ -28,14 +29,14 @@ function App()
     return (
         
         
-        <GlobalInfo.Provider value ={{color:myColor}}>
-            <h1 style={{ color: myColor }}>App js</h1>
-            <Child/>
-        </GlobalInfo.Provider>
+        // <GlobalInfo.Provider value ={{color:myColor}}>
+        //     <h1 style={{ color: myColor }}>App js</h1>
+        //     <Child/>
+        // </GlobalInfo.Provider>
 
-        // <div>
-        //     <SearchMovie />
-        // </div>
+        <div>
+            <SearchMovie />
+        </div>
 
     )
 }
